@@ -1,0 +1,14 @@
+class Solution:
+    def replaceElements(self, arr: List[int]) -> List[int]:
+        right_max = -1
+        current = -1
+
+        for idx in range(len(arr) - 1, -1, -1):
+            current = arr[idx]
+            arr[idx] = right_max
+
+            if current > right_max:
+                right_max = current
+
+        return arr
+
